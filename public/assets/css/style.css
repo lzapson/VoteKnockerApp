@@ -12,9 +12,22 @@ body {
   background-color: lightslategrey;
 }
 
-/* #main-content {
-    padding-top: 60px;
-} */
+.jumbotron {
+  padding-top: 32px;
+}
+
+#voterId {
+  display: none;
+}
+
+#main-content {
+  padding-top: 110px;
+} 
+
+p.map-marker-popup {
+  margin-top: 1px;
+  margin-bottom: 2px;
+}
 
 #logo {
  height: 50px;

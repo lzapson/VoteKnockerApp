@@ -22,38 +22,6 @@ module.exports = function(app) {
     res.render("index");
   });
 
-  app.get("/status/:id", function(req, res) {
-      var voterId = req.params.id;
-      connection.query("SELECT * FROM alphavoters2 WHERE voterId =?", voterId, function(err, result) {
-        console.log(result[0]);
-        res.render("status", result[0]);
-      });
-    });
-
-    app.get("/userStats", function(req, res) {
-      res.render("userStats");
-    });
-
-    
-  app.get("/interactions/:id", function(req, res) {
-      var voterId = req.params.id;
-      connection.query("SELECT * FROM alphavoters2 WHERE voterId =?", voterId, function(err, result) {
-        res.render("interactions", result[0]);
-      });
-    });
-
-      // GET route for getting all of the stats
-      app.get("/stats", function(req, res) {
-     
-          connection.query("SELECT * FROM voterinteractions", function(err, result) {
-            console.log(result);
-            var interaction = {
-              interactions : result
-            };
-            res.render("userStats", interaction);
-          });
-
-      });
-
-   
+  
+  
 };  // module.exports 

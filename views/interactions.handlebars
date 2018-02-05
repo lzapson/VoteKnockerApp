@@ -1,35 +1,34 @@
 
-    <br>
-    <br>
-    <div class="container">
+     <div class="container" id="main-content">
       <div class="jumbotron">
         <!-- Knocking Button -->
-        
+      
         <div class="row-col-10">
           <div class="flex-table">
-              <h1><div id="voterId">{{voterId}}</div></h1>
-              <h1><div id="firstName">{{firstName}}</div></h1>
-              <h1><div id="middleName">{{middleName}}</div></h1>
-              <h1><div id="lastName">{{lastName}}</div></h1>
+              <h1><div id="id">{{voter.id}}</div></h1>
+              <h1><div id="voterId">{{voter.voterId}}</div></h1>
+              <h1><div id="firstName">{{voter.firstName}}</div></h1>
+              <h1><div id="middleName">{{voter.middleName}}</div></h1>
+              <h1><div id="lastName">{{voter.lastName}}</div></h1>
           </div>
         </div>
         
         <div class="row-col-10">
           <div class="flex-table">
-              <h3><id="streetNumber">{{streetNum}}</id></h3>
-              <h3><id="streetName">{{streetName}}</id></h3>
-              <h3><id="unitNum">{{unitNum}}</id></h3>
+              <h3><id="streetNumber">{{voter.streetNum}}</id></h3>
+              <h3><id="streetName">{{voter.streetName}}</id></h3>
+              <h3><id="unitNum">{{voter.unitNum}}</id></h3>
           </div>
         </div>
 
         <div class="row-col-10">
           <div class="flex-table">
-              <h3><id="city">{{city}},</id></h3>
-              <h3><id="zip">{{zip}}</id></h3>
+              <h3><id="city">{{voter.city}},</id></h3>
+              <h3><id="zip">{{voter.zip}}</id></h3>
           </div>
         </div>
 
-
+ <div class="district-box">
 <div container="survey">
   <br>
 
@@ -69,5 +68,6 @@
             </div>
           </div>
         </div>
-      </body>
-    {{!-- </html> --}}
+        
+      
+ 

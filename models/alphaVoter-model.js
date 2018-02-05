@@ -27,8 +27,11 @@ module.exports = function (sequelize, DataTypes) {
 		freeholder: DataTypes.INTEGER(4),
 		schoolDist: DataTypes.STRING(4),
 		regionalSchool: DataTypes.STRING(4),
-		fireDist: DataTypes.STRING(4)
+		fireDist: DataTypes.STRING(4),
+		longitude: DataTypes.STRING(40),
+		lat: DataTypes.STRING(40)
 	});
+
 
 	//join AlphaVoter with VoterHistory and VoterInteractions
 	AlphaVoter.associate = function (models) {

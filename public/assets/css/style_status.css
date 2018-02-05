@@ -2,8 +2,7 @@
 .district-box{
   background: #b4c4dc;
   color: white;
-  height: 500px;
-  padding: 20px;
+  padding: 10px;
 }
 
 .flex-table {
@@ -12,7 +11,8 @@
 }
 
 .flex-table > h1,
-.flex-table > h3
+.flex-table > h3,
+.flex-table > h4
 {
   padding-right:10px;
 }
@@ -26,7 +26,7 @@
   font-size: 20px;
 }
 
-.accordion {
+/* .accordion {
     background-color: #eee;
     color: #444;
     cursor: pointer;
@@ -41,7 +41,7 @@
 
 .active, .accordion:hover {
     background-color: #ccc; 
-}
+} */
 
 .panel {
     padding: 0 18px;

@@ -4,19 +4,20 @@
 <table class="table table-striped table-light">
   <thead>
     <tr>
-      <th scope="col">ID</th>
+      <th scope="col">Date</th>
+      <th scope="col">Name</th>
       <th scope="col">Knocked</th>
       <th scope="col">Literature Dropped</th>
       <th scope="col">Petition Signed</th>
       <th scope="col">Email</th>
       <th scope="col">Phone</th>
-      <th scope="col">Created At</th>
     </tr>
   </thead>
   <tbody>
     {{#each interactions}}
     <tr>
-      <td>{{id}}</td>
+      <td>{{updatedAt}}</td>
+      <td>{{firstName}} {{lastName}}</td>
       <td>
         {{#if knocked}}
           Yes
@@ -40,7 +41,6 @@
       </td>
       <td>{{email}}</td>
       <td>{{phone}}</td>
-      <td>{{createdAt}}</td>
     </tr>
     {{/each}}
   </tbody>
