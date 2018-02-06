@@ -2,12 +2,13 @@
 .district-box{
   background: #b4c4dc;
   color: white;
-  padding: 10px;
+  padding: 20px 10px;
 }
 
 .flex-table {
   display: flex;
   justify-content: normal;
+  padding: 0px;
 }
 
 .flex-table > h1,
@@ -15,6 +16,7 @@
 .flex-table > h4
 {
   padding-right:10px;
+  color: darkslategray;
 }
 
 .button-center{
@@ -51,6 +53,6 @@
 }
 
 .extraContact {
-width: 300px;
+width: 200px;
 }
 

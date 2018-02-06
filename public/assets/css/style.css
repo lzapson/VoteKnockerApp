@@ -16,6 +16,28 @@ body {
   padding-top: 32px;
 }
 
+table {
+  text-align: center;
+}
+
+th, td {
+  padding-right: 2px !important;
+  padding-left:2px !important;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.address {
+  height: 28px;
+}
+
+.party-status {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 #voterId {
   display: none;
 }
@@ -175,6 +197,9 @@ p.map-marker-popup {
 
 
   @media only screen and (max-width: 425px) {
+    table {
+      font-size: 8px;
+    }
 
     input.filter-menu
     select.filter-menu

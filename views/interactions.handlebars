@@ -2,36 +2,40 @@
      <div class="container" id="main-content">
       <div class="jumbotron">
         <!-- Knocking Button -->
-      
+      <div id="id">{{voter.id}}</div>  
+      <div id="voterId">{{voter.voterId}}</div>
         <div class="row-col-10">
-          <div class="flex-table">
-              <h1><div id="id">{{voter.id}}</div></h1>
-              <h1><div id="voterId">{{voter.voterId}}</div></h1>
-              <h1><div id="firstName">{{voter.firstName}}</div></h1>
-              <h1><div id="middleName">{{voter.middleName}}</div></h1>
-              <h1><div id="lastName">{{voter.lastName}}</div></h1>
+          <div class="flex-table address">
+              <h4><div id="firstName">{{voter.firstName}}</div></h4>
+              <h4><div id="middleName">{{voter.middleName}}</div></h4>
+              <h4><div id="lastName">{{voter.lastName}}</div></h4>
           </div>
         </div>
         
         <div class="row-col-10">
-          <div class="flex-table">
-              <h3><id="streetNumber">{{voter.streetNum}}</id></h3>
-              <h3><id="streetName">{{voter.streetName}}</id></h3>
-              <h3><id="unitNum">{{voter.unitNum}}</id></h3>
+          <div class="flex-table address">
+              <h4><id="streetNumber">{{voter.streetNum}}</id></h4>
+              <h4><id="streetName">{{voter.streetName}}</id></h4>
+              <h4><id="unitNum">{{voter.unitNum}}</id></h4>
           </div>
         </div>
 
         <div class="row-col-10">
-          <div class="flex-table">
-              <h3><id="city">{{voter.city}},</id></h3>
-              <h3><id="zip">{{voter.zip}}</id></h3>
+          <div class="flex-table address">
+              <h4><id="city">{{voter.city}},</id></h4>
+              <h4><id="zip">{{voter.zip}}</id></h4>
+          </div>
+        </div>
+
+        <div class="row-col-10">
+          <div class="flex-table party-status">
+              <h3><id class="party">{{voter.party}} - </id></h3>
+              <h3><id class="status">{{voter.status}}</id></h3>
           </div>
         </div>
 
  <div class="district-box">
 <div container="survey">
-  <br>
-
       <h5>Did you knock?</h5>
       <form action="">
         <input type="radio" name="knock" value="1"> Yes<br>
@@ -50,8 +54,7 @@
         <input type="radio" name="petition" value="0"> No<br>
       </form>
       <br>
-      <br>
-      <h2> Extra Contact</h2>
+      <h5> Extra Contact</h5>
       <div class="extraContact">
         <label for="inputEmail">Email: </label>
         <input type="email" class="form-control" id="extraEmail" placeholder="email">
@@ -61,7 +64,7 @@
 
       <br>
           
-    <button type="submit" class="btn btn-default" id="add-interactions">Submit</button>
+    <button type="submit" class="btn btn-default btn-primary" id="add-interactions">Submit</button>
 
            
               </div>

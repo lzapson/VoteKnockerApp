@@ -12,30 +12,34 @@
   <div class="jumbotron">
     <!-- Knocking Button --> 
     <div class="row-col-10">
-      <div class="flex-table">
-          <h3><div id="firstName">{{status.firstName}}</div></h3>
-          <h3><div id="middleName">{{status.middleName}}</div></h3>
-          <h3><div id="lastName">{{status.lastName}}</div></h3>
+      <div class="flex-table address">
+          <h4><div id="firstName">{{status.firstName}}</div></h4>
+          <h4><div id="middleName">{{status.middleName}}</div></h4>
+          <h4><div id="lastName">{{status.lastName}}</div></h4>
       </div>
     </div>
     <div class="row-col-10">
-      <div class="flex-table">
+      <div class="flex-table address">
           <h4><id class="streetNumber">{{status.streetNum}}</id></h4>
           <h4><id class="streetName">{{status.streetName}}</id></h4>
           <h4><id class="unitNum">{{status.unitNum}}</id></h4>
       </div>
     </div>
     <div class="row-col-10">
-      <div class="flex-table">
+      <div class="flex-table address">
           <h4><id class="city">{{status.city}},</id></h4>
           <h4><id class="zip">{{status.zip}}</id></h4>
       </div>
     </div>
-  {{!-- </div>  <!-- /jumbotron -->  --}}
-
-  {{!-- <div class="jumbotron"> --}}
+    <div class="row-col-10">
+      <div class="flex-table party-status">
+          <h3><id class="party">{{status.party}} - </id></h3>
+          <h3><id class="status">{{status.status}}</id></h3>
+      </div>
+    </div>
+ 
     <!--     ADD STYLING FOR DISTRICT BOX -->
-    <div class="district-box">
+    {{!-- <div class="district-box">
       <h3> District Information </h3>
       <br>
       <h4><id class="district">District: {{status.district}}</id></h4>
@@ -46,19 +50,45 @@
       <h4><id class="freeholder">Freeholder: {{status.freeholder}}</id></h4>
       <h4><id class="schoolDistrict">School District: {{status.schoolDist}}</id></h4>
       <h4><id class="regionalSchool">Regional School: {{status.regionalSchool}}</id></h4> 
-      <h4><id class="party">Party: {{status.party}}</id></h4>
-      <h4><id class="status">Status: {{status.status}}</id></h4>  
+    </div> --}}
+
+    <div class="district-box">
+      <h3> District Information </h3>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>District</th>
+            <th>CD</th>
+            <th>LD</th>
+            <th>MUNI</th>
+            <th>Ward</th>
+            <th>Freeholder</th>
+            <th>School Dist</th>
+            <th>Regional School</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{status.district}}</td>
+            <td>{{status.congDist}}</td>
+            <td>{{status.legDist}}</td>
+            <td>{{status.municipality}}</td>
+            <td>{{status.ward}}</td>
+            <td>{{status.freeholder}}</td>
+            <td>{{status.schoolDist}}</td>
+            <td>{{status.regionalSchool}}</td>
+          </tr>
+          </tbody>
+          </table>
     </div>
-  {{!-- </div> --}}
 
-
-  {{!-- <div class="jumbotron"> --}}
+ 
     <div class="district-box">
       <h2> Voting History</h2>
       <table class="table table-striped">
         <thead>
           <tr>
-            <th>Election Name</th>
+            <th class="align-left">Election Name</th>
             <th>Type</th>
             <th>Category</th>
             <th>Ballot Type</th>
@@ -69,7 +99,7 @@
     <!--   Voter History  --> 
     {{#each history}}
       <tr>
-        <td>{{electionName}}</td>
+        <td class="align-left">{{electionName}}</td>
         <td>{{electionType}}</td>
         <td>{{electionCategory}}</td>
         <td>{{ballotType}}</td>
