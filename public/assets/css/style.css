@@ -38,7 +38,7 @@ th, td {
   margin-bottom: 10px;
 }
 
-#voterId {
+#voterId, #id {
   display: none;
 }
 
