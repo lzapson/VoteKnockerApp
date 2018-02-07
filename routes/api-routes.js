@@ -84,7 +84,7 @@ module.exports = function(app){
         //     var history = result;
         connection.query("SELECT * FROM alphavoters a WHERE a.voterId =?", voterId, function(err, result) {
             if (!result) {
-                res.render("status", voterStatus);
+                res.render("status");
             }else {
                 var status = result[0];
                 connection.query("SELECT * FROM alphavoters a, voterinteractions i WHERE a.voterId =? and a.voterId = i.voterId ORDER BY i.updatedAt DESC", voterId, function(err, result) {
