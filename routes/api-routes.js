@@ -83,16 +83,20 @@ module.exports = function(app){
         //     var status = result[0];
         //     var history = result;
         connection.query("SELECT * FROM alphavoters a WHERE a.voterId =?", voterId, function(err, result) {
-            var status = result[0];
-            connection.query("SELECT * FROM alphavoters a, voterinteractions i WHERE a.voterId =? and a.voterId = i.voterId ORDER BY i.updatedAt DESC", voterId, function(err, result) {
-                var interactions = result;
-                var voterStatus = {
-                status: status,
-                // history: history,
-                interactions: interactions
-                }
+            if (!result) {
                 res.render("status", voterStatus);
-            });
+            }else {
+                var status = result[0];
+                connection.query("SELECT * FROM alphavoters a, voterinteractions i WHERE a.voterId =? and a.voterId = i.voterId ORDER BY i.updatedAt DESC", voterId, function(err, result) {
+                    var interactions = result;
+                    var voterStatus = {
+                    status: status,
+                    // history: history,
+                    interactions: interactions
+                    }
+                    res.render("status", voterStatus);
+                });
+            }
         });
     
         // db.AlphaVoter.findAll({
