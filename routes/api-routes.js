@@ -7,7 +7,6 @@ var db = require("../models");
 module.exports = function(app){
 
     app.post("/api/filter", function(req,res){
-        console.log("req.body ", req.body);
         if (req.body.party != "" && req.body.status != "") {
             db.AlphaVoter.findAll({
                 where: {
