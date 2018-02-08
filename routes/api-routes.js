@@ -2,45 +2,52 @@ var connection = require("../config/connection");
 var fs = require("fs");
 var path = require("path");
 
-var db = require("../models");
+// var db = require("../models");
 
 module.exports = function(app){
 
+    // app.post("/api/filter", function(req,res){
+    //     if (req.body.party != "" && req.body.status != "") {
+    //         db.AlphaVoter.findAll({
+    //             where: {
+    //                 party: req.body.party,
+    //                 status: req.body.status
+    //             }
+    //         })
+    //         .then(function(data) {
+    //           res.json(data);
+    //         });
+    //     }else if (req.body.party != "" && req.body.status == "") {
+    //         db.AlphaVoter.findAll({
+    //             where: {
+    //                 party: req.body.party
+    //             }
+    //         })
+    //         .then(function(data) {
+    //           res.json(data);
+    //         });
+    //     }else if (req.body.party == "" && req.body.status != "") {
+    //         db.AlphaVoter.findAll({
+    //             where: {
+    //                 status: req.body.status
+    //             }
+    //         })
+    //         .then(function(data) {
+    //           res.json(data);
+    //         });
+    //     }else {
+    //         db.AlphaVoter.findAll({ })
+    //         .then(function(data) {
+    //           res.json(data);
+    //         });
+    //     }
+    // });
+
     app.post("/api/filter", function(req,res){
-        if (req.body.party != "" && req.body.status != "") {
-            db.AlphaVoter.findAll({
-                where: {
-                    party: req.body.party,
-                    status: req.body.status
-                }
-            })
-            .then(function(data) {
-              res.json(data);
-            });
-        }else if (req.body.party != "" && req.body.status == "") {
-            db.AlphaVoter.findAll({
-                where: {
-                    party: req.body.party
-                }
-            })
-            .then(function(data) {
-              res.json(data);
-            });
-        }else if (req.body.party == "" && req.body.status != "") {
-            db.AlphaVoter.findAll({
-                where: {
-                    status: req.body.status
-                }
-            })
-            .then(function(data) {
-              res.json(data);
-            });
-        }else {
-            db.AlphaVoter.findAll({ })
-            .then(function(data) {
-              res.json(data);
-            });
-        }
+        connection.query("SELECT * FROM alphavoters",function(err, result) {
+            if (err) throw err;
+            res.json(result);
+        });
     });
 
     app.get("/api/states", function(req,res){
