@@ -7,7 +7,7 @@
 var path = require("path");
 var connection = require("../config/connection");
 
-var db = require("../models");
+// var db = require("../models");
 
 
 // Routes
