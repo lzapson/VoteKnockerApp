@@ -2,52 +2,30 @@ var connection = require("../config/connection");
 var fs = require("fs");
 var path = require("path");
 
-// var db = require("../models");
-
 module.exports = function(app){
 
-    // app.post("/api/filter", function(req,res){
-    //     if (req.body.party != "" && req.body.status != "") {
-    //         db.AlphaVoter.findAll({
-    //             where: {
-    //                 party: req.body.party,
-    //                 status: req.body.status
-    //             }
-    //         })
-    //         .then(function(data) {
-    //           res.json(data);
-    //         });
-    //     }else if (req.body.party != "" && req.body.status == "") {
-    //         db.AlphaVoter.findAll({
-    //             where: {
-    //                 party: req.body.party
-    //             }
-    //         })
-    //         .then(function(data) {
-    //           res.json(data);
-    //         });
-    //     }else if (req.body.party == "" && req.body.status != "") {
-    //         db.AlphaVoter.findAll({
-    //             where: {
-    //                 status: req.body.status
-    //             }
-    //         })
-    //         .then(function(data) {
-    //           res.json(data);
-    //         });
-    //     }else {
-    //         db.AlphaVoter.findAll({ })
-    //         .then(function(data) {
-    //           res.json(data);
-    //         });
-    //     }
-    // });
-
     app.post("/api/filter", function(req,res){
-        connection.query("SELECT * FROM alphavoters",function(err, result) {
-            if (err) throw err;
-            res.json(result);
-        });
+        if (!req.body.party && !req.body.status) {
+            connection.query("SELECT * FROM alphavoters",function(err, result) {
+                if (err) throw err;
+                res.json(result);
+            });
+        } else if (req.body.party != "" && req.body.status != "") {
+            connection.query("SELECT * FROM alphavoters WHERE party=? and status=?", [req.body.party, req.body.status], function(err, result) {
+                if (err) throw err;
+                res.json(result);
+            });
+        } else if (req.body.party != "") {
+            connection.query("SELECT * FROM alphavoters WHERE party=?", req.body.party, function(err, result) {
+                if (err) throw err;
+                res.json(result);
+            });
+        } else if (req.body.status != "") {
+            connection.query("SELECT * FROM alphavoters WHERE status=?", req.body.status, function(err, result) {
+                if (err) throw err;
+                res.json(result);
+            });
+        }
     });
 
     app.get("/api/states", function(req,res){
@@ -63,22 +41,31 @@ module.exports = function(app){
 
     // POST route for saving a new interaction
     app.post("/api/interactions", function(req, res) {
-        console.log(req.body);
+        var voterId = req.body.voterId;
         var knocked = req.body.knock == 1 ? true : false;
         var litDropped = req.body.handOutLit == 1 ? true : false;
         var petitionSigned = req.body.signPetition == 1 ? true : false;
-
-        db.VoterInteractions.create({
-            AlphaVoterId: req.body.AlphaVoterId,
-            voterId: req.body.voterId,
-            knocked: knocked,
-            litDropped: litDropped,
-            petitionSigned: petitionSigned,
-            email: req.body.email,
-            phone: req.body.phone
-        }).then(function(dbInteraction) {
-            res.json(dbInteraction);
-        });
+        var today = new Date();
+        
+        var query = connection.query(
+            "INSERT INTO voterinteractions SET ?",
+            {
+                AlphaVoterId: req.body.AlphaVoterId,
+                voterId: voterId,
+                knocked: knocked,
+                litDropped: litDropped,
+                petitionSigned: petitionSigned,
+                email: req.body.email,
+                phone: req.body.phone,
+                createdAt: today,
+                updatedAt: today
+            },
+            function(err, result) {
+                if (err) throw err;
+                res.send("../status/" + voterId);
+                // res.json(voterId);
+            }
+          );
     });
 
 
@@ -96,35 +83,17 @@ module.exports = function(app){
                     }
                     res.render("status", voterStatus);
                 });
-
-        });
-    
-        // db.AlphaVoter.findAll({
-        //   include: [db.VoterHistory],
-        //   where: {
-        //     voterId: req.params.id
-        //   }
-        // }).then(function(data) {
-        //   var status = {
-        //     status : data[0],
-        //     history: data
-        //   }
-        //   res.render("status", status);
-        // });
-    
+            });
         });
       
       
         app.get("/interactions/:id", function(req, res) {
-            db.AlphaVoter.findOne({
-                where: {
-                    voterId: req.params.id
-                }
-            }).then(function(data) {
+            var voterId = req.params.id;
+            connection.query("SELECT * FROM alphavoters WHERE voterId =?", voterId, function(err, result) {
                 var voter = {
-                    voter : data,
+                    voter : result[0]
                 }
-            res.render("interactions", voter);
+                res.render("interactions", voter);
             });
         });
       
@@ -136,14 +105,6 @@ module.exports = function(app){
               };
               res.render("userStats", interaction);
             });
-    
-            // db.VoterInteractions.findAll({})
-            // .then(function(data) {
-            //     var interaction = {
-            //     interactions : data
-            //     };
-            //     res.render("userStats", interaction);
-            // });
         });
 
 

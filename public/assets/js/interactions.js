@@ -13,12 +13,10 @@ $(document).ready(function () {
             phone: $("#extraPhone").val().trim(),    
         }
         $.post("/api/interactions", interactionsObj, function (data) {
-            console.log("add interactions successful", data);
+            location.reload();
         });
 
     });
-
-
 
 
 });

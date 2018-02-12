@@ -1,138 +1,161 @@
-
-    <!-- Main Content-->
-<div class="container" id="main-content">
-  <div class="row-col-10">
-    <div class="button-center">
+<div class="container-fluid" id="main-content">
+    <div class="button-center more-bottom-margin">
       <a href="/interactions/{{status.voterId}}">
         <button type="button" class="btn btn-danger" >Knock This Voter</button>
       </a>
     </div>
-  </div>
-  <br>
-  <div class="jumbotron">
-    <!-- Knocking Button --> 
-    <div class="row-col-10">
-      <div class="flex-table address">
-          <h4><div id="firstName">{{status.firstName}}</div></h4>
-          <h4><div id="middleName">{{status.middleName}}</div></h4>
-          <h4><div id="lastName">{{status.lastName}}</div></h4>
-      </div>
-    </div>
-    <div class="row-col-10">
-      <div class="flex-table address">
-          <h4><id class="streetNumber">{{status.streetNum}}</id></h4>
-          <h4><id class="streetName">{{status.streetName}}</id></h4>
-          <h4><id class="unitNum">{{status.unitNum}}</id></h4>
-      </div>
-    </div>
-    <div class="row-col-10">
-      <div class="flex-table address">
-          <h4><id class="city">{{status.city}},</id></h4>
-          <h4><id class="zip">{{status.zip}}</id></h4>
-      </div>
-    </div>
-    <div class="row-col-10">
-      <div class="flex-table party-status">
-          <h3><id class="party">{{status.party}} - </id></h3>
-          <h3><id class="status">{{status.status}}</id></h3>
-      </div>
-    </div>
- 
-    <div class="district-box">
-      <h3> District Information </h3>
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>District</th>
-            <th>CD</th>
-            <th>LD</th>
-            <th>MUNI</th>
-            <th>Ward</th>
-            <th>Freeholder</th>
-            <th>School Dist</th>
-            <th>Regional School</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>{{status.district}}</td>
-            <td>{{status.congDist}}</td>
-            <td>{{status.legDist}}</td>
-            <td>{{status.municipality}}</td>
-            <td>{{status.ward}}</td>
-            <td>{{status.freeholder}}</td>
-            <td>{{status.schoolDist}}</td>
-            <td>{{status.regionalSchool}}</td>
-          </tr>
-          </tbody>
-          </table>
+    <div class="card-border">
+        <div class="card">
+            <div class="card-block">
+                <h4 class="card-title">
+                    <div class="row">
+                        <div class="col-5">
+                            <div class="flex-table address">
+                            <h4><id class="party">{{status.party}} - </id></h4>
+                            <h4><id class="status">{{status.status}}</id></h4>
+                            </div>
+                        </div>
+                        <div class="col-7">
+                            <div class="flex-table address">
+                            <h4><div id="firstName">{{status.firstName}}</div></h4>
+                            <h4><div id="middleName">{{status.middleName}}</div></h4>
+                            <h4><div id="lastName">{{status.lastName}}</div></h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-5"></div>
+                        <div class="col-7">
+                            <div class="flex-table address">
+                                <h5><id class="streetNumber">{{status.streetNum}}</id></h5>
+                                <h5><id class="streetName">{{status.streetName}}</id></h5>
+                                <h5><id class="unitNum">{{status.unitNum}},</id></h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-5">
+                        </div>
+                        <div class="col-7">
+                            <div class="flex-table address">
+                                <h5><id class="city">{{status.city}},</id></h5>
+                                <h5><id class="zip">{{status.zip}}</id></h5>
+                            </div>
+                        </div>
+                    </div>
+                </h4>
+            </div>
+            {{!-- <div class="card-block">
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+            </div> --}}
+        </div>
+        <div class="card">
+            <div class="card-block">
+                <h5>District Information</h5>
+                <table class="table table-sm">
+                    <thead>
+                    <tr>
+                        <th>District</th>
+                        <th>CD</th>
+                        <th>LD</th>
+                        <th>MUNI</th>
+                        <th>Ward</th>
+                        <th>Freeholder</th>
+                        <th>School Dist</th>
+                        <th>Regional School</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>{{status.district}}</td>
+                        <td>{{status.congDist}}</td>
+                        <td>{{status.legDist}}</td>
+                        <td>{{status.municipality}}</td>
+                        <td>{{status.ward}}</td>
+                        <td>{{status.freeholder}}</td>
+                        <td>{{status.schoolDist}}</td>
+                        <td>{{status.regionalSchool}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-block">
+                <h5>Voting History</h5>
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th class="align-left">Election Name</th>
+                            <th>Type</th>
+                            <th>Category</th>
+                            <th>Ballot Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <!--   Voter History  --> 
+                    {{#each history}}
+                    <tr>
+                        <td class="align-left">{{electionName}}</td>
+                        <td>{{electionType}}</td>
+                        <td>{{electionCategory}}</td>
+                        <td>{{ballotType}}</td>
+                    </tr>
+                    {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+                <div class="card">
+            <div class="card-block">
+                <h5>Interactions</h5>
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Knocked</th>
+                            <th>Literature Dropped</th>
+                            <th>Petition Signed</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!--   Interaction History  --> 
+                        {{#each interactions}}
+                        <tr>
+                            <td>{{updatedAt}}</td>
+                            <td>
+                            {{#if knocked}}
+                            Yes
+                            {{else}}
+                            No
+                            {{/if}}
+                        </td>
+                        <td>
+                            {{#if litDropped}}
+                            Yes
+                            {{else}}
+                            No
+                            {{/if}}
+                        </td>
+                        <td>
+                            {{#if petitionSigned}}
+                            Yes
+                            {{else}}
+                            No
+                            {{/if}}
+                        </td>
+                            <td>{{email}}</td>
+                            <td>{{phone}}</td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 
- 
-    <div class="district-box">
-      <h2> Voting History</h2>
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th class="align-left">Election Name</th>
-            <th>Type</th>
-            <th>Category</th>
-            <th>Ballot Type</th>
-          </tr>
-        </thead>
-        <tbody>
 
-    <!--   Voter History  --> 
-    {{#each history}}
-      <tr>
-        <td class="align-left">{{electionName}}</td>
-        <td>{{electionType}}</td>
-        <td>{{electionCategory}}</td>
-        <td>{{ballotType}}</td>
-      </tr>
-    {{/each}}
-    </tbody>
-    </table>
-
- <h2> Interaction History</h2>
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Knocked</th>
-            <th>Literature Dropped</th>
-            <th>Petition Signed</th>
-            <th>Email</th>
-            <th>Phone</th>
-          </tr>
-        </thead>
-        <tbody>
-
-    <!--   Interaction History  --> 
-    {{#each interactions}}
-      <tr>
-        <td>{{updatedAt}}</td>
-        <td>{{knocked}}</td>
-        <td>{{litDropped}}</td>
-        <td>{{petitionSigned}}</td>
-        <td>{{email}}</td>
-        <td>{{phone}}</td>
-      </tr>
-    {{/each}}
-    </tbody>
-    </table>
-   
-    </div>
-  </div>   <!-- /jumbotron --> 
-
-  <!-- Knocking Button -->
-  <div class="row-col-10">
-    <div class="button-center">
-      <a href="/interactions/{{voterId}}">
-        <button type="button" class="btn btn-danger" >Knock This Voter</button>
-      </a>
-    </div>
-  </div>
-  <br>
-
-</div>  <!-- /container --> 
+</div>

@@ -1,50 +1,16 @@
 #map {
   height: 100%;
 }
-#button-status{
-  padding:6px 1px;
-}
-html,
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  background-color: lightslategrey;
-}
-
-.jumbotron {
-  padding-top: 32px;
-}
-
-table {
-  text-align: center;
-}
-
-th, td {
-  padding-right: 2px !important;
-  padding-left:2px !important;
-}
-
-.align-left {
-  text-align: left;
-}
-
-.address {
-  height: 28px;
-}
-
-.party-status {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-#voterId, #id {
-  display: none;
-}
 
 #main-content {
   padding-top: 110px;
 } 
+
+.card {
+  margin: 5px auto;
+  width: 40rem;
+  padding: 10px 15px;
+}
 
 p.map-marker-popup {
   margin-top: 1px;
@@ -58,7 +24,8 @@ p.map-marker-popup {
 #mainNav {
   position: fixed;
   border-bottom: 0;
-  background-color: lightsteelblue;
+  background-color: lightslategrey;
+  border-bottom-width: 1px;
 }
 
 #mainNav.navbar-nav > li.nav-item > a {
@@ -68,7 +35,7 @@ p.map-marker-popup {
 /* Filter Menu */
 .navbar-primary {
     font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    background-color: lightsteelblue;
+    background-color: lightslategrey;
     left: 0px;
     position: absolute;
     top: 20px;
@@ -136,7 +103,7 @@ p.map-marker-popup {
     padding-bottom: 0px;
   }
 
- 
+
   .btn-expand-collapse:hover,
   .btn-expand-collapse:focus {
       background-color: #222;
@@ -197,6 +164,15 @@ p.map-marker-popup {
 
 
   @media only screen and (max-width: 425px) {
+    #main-content {
+      padding-top: 90px;
+    } 
+
+    .card {
+      margin: 0 auto;
+      width: 20rem;
+    }
+
     table {
       font-size: 8px;
     }

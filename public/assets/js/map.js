@@ -118,6 +118,7 @@ $(document).ready(function () {
             filterMenu.attr("class", "fa fa-caret-square-o-right");
         }
     });
+    
 
     $("#filter-menu-submit").on("click", function () {
         loadMapWithFilter();
@@ -150,6 +151,12 @@ $(document).ready(function () {
         }
 
         $.post("/api/filter", filterObj, function (data) {
+            // close filter menu when open
+            var filterMenu = $('#filter-menu-icon');
+            if (filterMenu.attr("class") == "fa fa-caret-square-o-left") {
+                $('.navbar-primary').toggleClass('collapsed');
+                filterMenu.attr("class", "fa fa-caret-square-o-right");
+            } 
             loadMap(data);
         });
     }
