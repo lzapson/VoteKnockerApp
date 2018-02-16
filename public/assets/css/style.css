@@ -67,7 +67,8 @@ p.map-marker-popup {
     bottom:0;
     left: 0px;
     width: 20px;
-    color: grey;
+    color: white;
+    background-color:black;
     font-size: 20px;
     font-weight: 900;
     text-align: center;
@@ -110,15 +111,9 @@ p.map-marker-popup {
     padding-bottom: 0px;
   }
 
-
   .btn-expand-collapse:hover,
   .btn-expand-collapse:focus {
-      background-color: #222;
       color: white;
-  }
-  
-  .btn-expand-collapse:active {
-      background-color: #111;
   }
 
   div.form-group.row {
@@ -149,10 +144,9 @@ p.map-marker-popup {
   }
 
   #filter-menu-submit {
-    padding: 1px 6px;
-    font-family:sans-serif;
-    font-size: 16px;
-    font-weight: 500;
+    padding: 6px 10px;
+    font-size: 18px;
+    font-weight: bold;
     letter-spacing: 1px;
     text-transform: uppercase;
     border-radius: .2em;
