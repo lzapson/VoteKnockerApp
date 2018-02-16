@@ -12,8 +12,9 @@ $(document).ready(function () {
             email: $('#extraEmail').val().trim(),
             phone: $("#extraPhone").val().trim(),    
         }
-        $.post("/api/interactions", interactionsObj, function (data) {
-            location.reload();
+        $.post("/api/interactions", interactionsObj, function (voterId) {
+            // window.location.assign("../status/" + voterId);
+           
         });
 
     });

@@ -40,23 +40,17 @@ width: 200px;
 }
 
 #button-status{
-  padding:6px 1px;
+  padding:6px 10px;
+  margin-left: 45px;
 }
+
 html,
 body {
   height: 100%;
   margin: 0;
   padding: 0;
-  /* background-color: lightslategrey; */
   background-color: #b4c4dc;
 }
-
-
-
-/* .card-border{
-  background: #b4c4dc;
-  padding: 20px 10px;
-} */
 
 
 .jumbotron {

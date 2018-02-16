@@ -61,8 +61,8 @@ module.exports = function(app){
                 updatedAt: today
             },
             function(err, result) {
-                if (err) throw err;
-                res.send("../status/" + voterId);
+                if (err) throw err;  
+                res.redirect("../status/" + voterId);          
                 // res.json(voterId);
             }
           );

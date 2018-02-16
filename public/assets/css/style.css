@@ -15,7 +15,14 @@
 p.map-marker-popup {
   margin-top: 1px;
   margin-bottom: 2px;
+  padding: 10px;
+  color: lightslategray;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
 }
+
+
 
 #logo {
  height: 50px;
