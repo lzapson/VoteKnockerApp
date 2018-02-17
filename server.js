@@ -32,7 +32,7 @@ app.engine("handlebars", exphbs({
                   formatDate: function (date, format) {
                     return moment(date).format(format);
                   },
-                  foo: function () { return 'foo'; }
+                  foo: function (hello) { return hello; }
                 }
 }));
 app.set("view engine", "handlebars");

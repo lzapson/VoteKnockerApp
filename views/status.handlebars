@@ -45,10 +45,6 @@
                     </div>
                 </h4>
             </div>
-            {{!-- <div class="card-block">
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-            </div> --}}
         </div>
         <div class="card">
             <div class="card-block">
@@ -107,7 +103,7 @@
                 </table>
             </div>
         </div>
-                <div class="card">
+        <div class="card">
             <div class="card-block">
                 <h5>Interactions</h5>
                 <table class="table table-sm text-center">
@@ -125,10 +121,7 @@
                         <!--   Interaction History  --> 
                         {{#each interactions}}
                         <tr>
-                            <td class="text-left">{{updatedAt}}</td>
-                             {{!-- <td class="text-left">{{updatedAt,"DD/MM/YYYY"}}</td> --}}
-                             {{!-- <td class="text-left">{{foo}}</td> --}}
-                            
+                            <td class="text-left">{{formatDate updatedAt 'MMMM DD, YYYY'}}</td>
                             <td>
                             {{#if knocked}}
                             Yes
