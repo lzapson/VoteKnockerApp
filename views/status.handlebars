@@ -1,18 +1,18 @@
 <div class="container-fluid" id="main-content">
-    <div class="button-center more-bottom-margin">
+    <div class="more-bottom-margin text-center">
       <a href="/interactions/{{status.voterId}}">
-        <button type="button" class="btn btn-danger" >Knock This Voter</button>
+        <button type="button" class="btn btn-danger" id="button-status">Knock This Voter</button>
       </a>
     </div>
-    <div class="card-border">
+    <div class="card-border" id="status-border">
         <div class="card">
             <div class="card-block">
                 <h4 class="card-title">
                     <div class="row">
                         <div class="col-5">
                             <div class="flex-table address">
-                            <h4><id class="party">{{status.party}} - </id></h4>
-                            <h4><id class="status">{{status.status}}</id></h4>
+                            <h4><id="party">{{status.party}} - </id></h4>
+                            <h4><id="status">{{status.status}}</id></h4>
                             </div>
                         </div>
                         <div class="col-7">
@@ -27,9 +27,9 @@
                         <div class="col-5"></div>
                         <div class="col-7">
                             <div class="flex-table address">
-                                <h5><id class="streetNumber">{{status.streetNum}}</id></h5>
-                                <h5><id class="streetName">{{status.streetName}}</id></h5>
-                                <h5><id class="unitNum">{{status.unitNum}},</id></h5>
+                                <h4><id class="streetNumber">{{status.streetNum}}</id></h4>
+                                <h4><id class="streetName">{{status.streetName}}</id></h4>
+                                <h4><id class="unitNum">{{status.unitNum}},</id></h4>
                             </div>
                         </div>
                     </div>
@@ -38,8 +38,8 @@
                         </div>
                         <div class="col-7">
                             <div class="flex-table address">
-                                <h5><id class="city">{{status.city}},</id></h5>
-                                <h5><id class="zip">{{status.zip}}</id></h5>
+                                <h4><id class="city">{{status.city}},</id></h4>
+                                <h4><id class="zip">{{status.zip}}</id></h4>
                             </div>
                         </div>
                     </div>
@@ -53,7 +53,7 @@
         <div class="card">
             <div class="card-block">
                 <h5>District Information</h5>
-                <table class="table table-sm">
+                <table class="table table-sm text-center">
                     <thead>
                     <tr>
                         <th>District</th>
@@ -84,11 +84,11 @@
         <div class="card">
             <div class="card-block">
                 <h5>Voting History</h5>
-                <table class="table table-sm">
+                <table class="table table-sm text-center">
                     <thead>
                         <tr>
-                            <th class="align-left">Election Name</th>
-                            <th>Type</th>
+                            <th class="text-left">Election Name</th>
+                            <th class="text-left">Type</th>
                             <th>Category</th>
                             <th>Ballot Type</th>
                         </tr>
@@ -97,8 +97,8 @@
                     <!--   Voter History  --> 
                     {{#each history}}
                     <tr>
-                        <td class="align-left">{{electionName}}</td>
-                        <td>{{electionType}}</td>
+                        <td class="text-left">{{electionName}}</td>
+                        <td class="text-left">{{electionType}}</td>
                         <td>{{electionCategory}}</td>
                         <td>{{ballotType}}</td>
                     </tr>
@@ -110,10 +110,10 @@
                 <div class="card">
             <div class="card-block">
                 <h5>Interactions</h5>
-                <table class="table table-sm">
+                <table class="table table-sm text-center">
                     <thead>
                         <tr>
-                            <th>Date</th>
+                            <th class="text-left">Date</th>
                             <th>Knocked</th>
                             <th>Literature Dropped</th>
                             <th>Petition Signed</th>
@@ -125,7 +125,10 @@
                         <!--   Interaction History  --> 
                         {{#each interactions}}
                         <tr>
-                            <td>{{updatedAt}}</td>
+                            <td class="text-left">{{updatedAt}}</td>
+                             {{!-- <td class="text-left">{{updatedAt,"DD/MM/YYYY"}}</td> --}}
+                             {{!-- <td class="text-left">{{foo}}</td> --}}
+                            
                             <td>
                             {{#if knocked}}
                             Yes
@@ -147,8 +150,8 @@
                             No
                             {{/if}}
                         </td>
-                            <td>{{email}}</td>
-                            <td>{{phone}}</td>
+                            <td class="text-left">{{email}}</td>
+                            <td class="text-left">{{phone}}</td>
                         </tr>
                         {{/each}}
                     </tbody>
@@ -156,6 +159,10 @@
             </div>
         </div>
     </div>
-
+    <div class="more-bottom-margin text-center">
+      <a href="/interactions/{{status.voterId}}">
+        <button type="button" class="btn btn-danger" id="button-status">Knock This Voter</button>
+      </a>
+    </div>
 
 </div>

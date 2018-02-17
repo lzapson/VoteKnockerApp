@@ -1,3 +1,12 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #b4c4dc;
+  color: darkslategray;
+}
+
 #map {
   height: 100%;
 }
@@ -6,10 +15,44 @@
   padding-top: 110px;
 } 
 
-.card {
-  margin: 5px auto;
-  width: 40rem;
-  padding: 10px 15px;
+.flex-table {
+  display: flex;
+  justify-content: normal;
+  padding: 0px;
+}
+
+.flex-table > h1,
+.flex-table > h3,
+.flex-table > h4
+{
+  padding-right:10px;
+}
+
+#extraContact {
+width: 200px;
+}
+
+#button-status{
+  padding:6px 10px;
+  margin-left:10px;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: .2em;
+}
+
+.address {
+  height: 28px;
+}
+
+#party-status {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#voterId, #id {
+  display: none;
 }
 
 p.map-marker-popup {
@@ -22,7 +65,15 @@ p.map-marker-popup {
   font-weight: bold;
 }
 
+.card {
+  margin: 5px auto;
+  width: 60rem;
+  padding: 10px 15px;
+}
 
+#status-border {
+  margin-bottom: 20px;
+}
 
 #logo {
  height: 50px;
@@ -165,6 +216,19 @@ p.map-marker-popup {
 
 
   @media only screen and (max-width: 425px) {
+   
+  .flex-table > h1,
+  .flex-table > h3,
+  .flex-table > h4
+  {
+    font-size: 16px;
+    padding-right:2px;
+  }
+
+  .address {
+    height: 20px;
+  }
+
     #main-content {
       padding-top: 90px;
     } 
@@ -225,6 +289,3 @@ p.map-marker-popup {
     right:0px
   }
 }
-
-
-

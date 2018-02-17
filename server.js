@@ -24,9 +24,19 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 var exphbs = require("express-handlebars");
+var moment = require('moment');
 
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.engine("handlebars", exphbs({ 
+                defaultLayout: "main",
+                helpers: {
+                  formatDate: function (date, format) {
+                    return moment(date).format(format);
+                  },
+                  foo: function () { return 'foo'; }
+                }
+}));
 app.set("view engine", "handlebars");
+
 
 // Static directory
 app.use(express.static(path.join(__dirname,"public")));
