@@ -15,10 +15,18 @@ body {
   padding-top: 110px;
 } 
 
+#interactions {
+  font-size: 13px;
+} 
+
 .flex-table {
   display: flex;
   justify-content: normal;
   padding: 0px;
+}
+
+#survey {
+  padding: 10px;
 }
 
 .flex-table > h1,
@@ -32,7 +40,8 @@ body {
 width: 200px;
 }
 
-#button-status{
+#button-status,
+#add-interactions-button{
   padding:6px 10px;
   margin-left:10px;
   font-size: 18px;
@@ -219,9 +228,10 @@ p.map-marker-popup {
    
   .flex-table > h1,
   .flex-table > h3,
-  .flex-table > h4
+  .flex-table > h4,
+  h4
   {
-    font-size: 16px;
+    font-size: 14px;
     padding-right:2px;
   }
 
@@ -241,6 +251,10 @@ p.map-marker-popup {
     table {
       font-size: 8px;
     }
+
+    #interactions {
+      font-size: 6px;
+    } 
 
     input.filter-menu
     select.filter-menu
@@ -268,6 +282,28 @@ p.map-marker-popup {
   }
 
 @media only screen and (max-width: 340px) {
+
+  .flex-table > h1,
+  .flex-table > h3,
+  .flex-table > h4,
+  h4
+  {
+    font-size: 12px;
+    padding-right:2px;
+  }
+
+  .card {
+    margin: 0 auto;
+    width: 17rem;
+  }
+
+  table {
+    font-size: 6px;
+  }
+
+  #interactions {
+    font-size: 5px;
+  } 
 
   input.filter-menu
   select.filter-menu

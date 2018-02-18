@@ -1,40 +1,57 @@
 
      <div class="container" id="main-content">
-      <div class="jumbotron">
-        <!-- Knocking Button -->
-      <div id="id">{{voter.id}}</div>  
+           <div class="card-border" id="status-border">
+        <div class="card">
+            <div class="card-block">
+                <h4 class="card-title">
+                   <div id="id">{{voter.id}}</div>  
       <div id="voterId">{{voter.voterId}}</div>
-        <div class="row-col-10">
-          <div class="flex-table address">
-              <h4><div id="firstName">{{voter.firstName}}</div></h4>
-              <h4><div id="middleName">{{voter.middleName}}</div></h4>
-              <h4><div id="lastName">{{voter.lastName}}</div></h4>
-          </div>
+                    <div class="row">
+                        <div class="col-5">
+                            <div class="flex-table address">
+                            <h4><id="party">{{voter.party}}</id></h4>
+                            <h4><id="status">{{voter.status}}</id></h4>
+                            </div>
+                        </div>
+                        <div class="col-7">
+                            <div class="flex-table address">
+                            <h4><div id="firstName">{{voter.firstName}}</div></h4>
+                            <h4><div id="middleName">{{voter.middleName}}</div></h4>
+                            <h4><div id="lastName">{{Voter.lastName}}</div></h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-5"></div>
+                        <div class="col-7">
+                            <div class="flex-table address">
+                                <h4><id class="streetNumber">{{voter.streetNum}}</id></h4>
+                                <h4><id class="streetName">{{voter.streetName}}</id></h4>
+                                <h4><id class="unitNum">{{voter.unitNum}},</id></h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-5">
+                        </div>
+                        <div class="col-7">
+                            <div class="flex-table address">
+                                <h4><id class="city">{{voter.city}},</id></h4>
+                                <h4><id class="zip">{{voter.zip}}</id></h4>
+                            </div>
+                        </div>
+                    </div>
+                </h4>
+            </div>
         </div>
+
+
+     
         
-        <div class="row-col-10">
-          <div class="flex-table address">
-              <h4><id="streetNumber">{{voter.streetNum}}</id></h4>
-              <h4><id="streetName">{{voter.streetName}}</id></h4>
-              <h4><id="unitNum">{{voter.unitNum}}</id></h4>
-          </div>
-        </div>
 
-        <div class="row-col-10">
-          <div class="flex-table address">
-              <h4><id="city">{{voter.city}},</id></h4>
-              <h4><id="zip">{{voter.zip}}</id></h4>
-          </div>
-        </div>
-
-        <div class="row-col-10">
-          <div class="flex-table" id="party-status">
-              <h3><id class="party">{{voter.party}} - </id></h3>
-              <h3><id class="status">{{voter.status}}</id></h3>
-          </div>
-        </div>
-
-<div container="survey">
+        <div class="card">
+            <div class="card-block">
+<div id="survey">
       <h5>Did you knock?</h5>
       <form action="">
         <input type="radio" name="knock" value="1"> Yes<br>
@@ -56,18 +73,20 @@
       <h5> Extra Contact</h5>
       <div id="extraContact">
         <label for="inputEmail">Email: </label>
-        <input type="email" class="form-control" id="extraEmail" placeholder="email">
+        <input type="email" class="form-control" id="extraEmail" placeholder="email"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
         <label for="inputPhone">Phone: </label>
         <input type="phone" class="form-control" id="extraPhone" placeholder="(***)  *** - ****">
       </div>
 
       <br>
           
-    <button type="submit" class="btn btn-default btn-primary" id="add-interactions">Submit</button>
+    <button type="submit" class="btn btn-default btn-primary" id="add-interactions-button">Submit</button>
 
            
               </div>
-          </div>
+ </div>
+
+        </div>
         </div>
         
       
