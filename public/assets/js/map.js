@@ -129,7 +129,7 @@ $(document).ready(function () {
         if ($("#status").val().trim() == "") {
             status = "";
         }else {
-            status = $("#status").val().trim() == "active" ? "Active" : "Inactive Confirmation";
+            status = $("#status").val().trim() == "active" ? "Active" : "Inactive";
         }
         
             filterObj = {
