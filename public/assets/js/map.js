@@ -39,7 +39,7 @@ function loadMap(data) {
                 voterId: results.voterId,
                 name: results.firstName + " " + results.lastName,
                 address: results.streetNum + " "+ results.streetName,
-                cityZip: results.city +" " + results.zip,
+                cityZip: results.city +", " + results.state + " " + results.zipcode,
                 icon: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png',
                 getName: function(){
                     var text = `<p class="map-marker-popup">${this.name}<br>${this.address}<br>${this.cityZip}</p><a href="../status/${this.voterId}"><button type="button" class="btn btn-primary" id="button-status">Voter Status</button></a>`;
@@ -54,7 +54,7 @@ function loadMap(data) {
                 voterId: results.voterId,
                 name: results.firstName + " " + results.lastName,
                 address: results.streetNum + " "+ results.streetName,
-                cityZip: results.city +" " + results.zip,
+                cityZip: results.city +", " + results.state + " " + results.zipcode,
                 icon: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png',
                 getName: function(){
                     var text = `<p class="map-marker-popup">${this.name}<br>${this.address}<br>${this.cityZip}</p><a href="../status/${this.voterId}"><button type="button" class="btn btn-primary" id="button-status">Voter Status</button></a>`;
@@ -69,7 +69,7 @@ function loadMap(data) {
                 voterId: results.voterId,
                 name: results.firstName + " " + results.lastName,
                 address: results.streetNum + " "+ results.streetName,
-                cityZip: results.city +" " + results.zip,
+                cityZip: results.city +", " + results.state + " " + results.zipcode,
                 icon: 'https://maps.google.com/mapfiles/ms/icons/yellow-dot.png',
                 getName: function(){
                     var text = `<p class="map-marker-popup">${this.name}<br>${this.address}<br>${this.cityZip}</p><a href="../status/${this.voterId}"><button type="button" class="btn btn-primary" id="button-status">Voter Status</button></a>`;
@@ -84,7 +84,7 @@ function loadMap(data) {
                     voterId: results.voterId,
                     name: results.firstName + " " + results.lastName,
                     address: results.streetNum + " "+ results.streetName,
-                    cityZip: results.city +" " + results.zip,
+                    cityZip: results.city +", " + results.state + " " + results.zipcode,
                     icon: 'https://maps.google.com/mapfiles/ms/icons/green-dot.png',
                     getName: function () {
                         var text = `<p class="map-marker-popup">${this.name}<br>${this.address}<br>${this.cityZip}</p><a href="../status/${this.voterId}"><button type="button" class="btn btn-primary" id="button-status">Voter Status</button></a>`;
