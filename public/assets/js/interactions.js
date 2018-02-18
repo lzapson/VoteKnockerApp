@@ -2,7 +2,7 @@ $(document).ready(function () {
 
   
 
-    $("#add-interactions").on("click", function () {
+    $("#add-interactions-button").on("click", function () {
         var interactionsObj = {
             AlphaVoterId: $('#id').text(),
             voterId: $('#voterId').text(),
@@ -13,7 +13,8 @@ $(document).ready(function () {
             phone: $("#extraPhone").val().trim(),    
         }
         $.post("/api/interactions", interactionsObj, function (voterId) {
-            // window.location.assign("../status/" + voterId);
+            console.log("voterid",voterId);
+            window.location.assign("../status/" + voterId);
            
         });
 

@@ -41,12 +41,12 @@ module.exports = function(app){
 
     // POST route for saving a new interaction
     app.post("/api/interactions", function(req, res) {
+        console.log("req", req);
         var voterId = req.body.voterId;
         var knocked = req.body.knock == 1 ? true : false;
         var litDropped = req.body.handOutLit == 1 ? true : false;
         var petitionSigned = req.body.signPetition == 1 ? true : false;
         var today = new Date();
-        
         var query = connection.query(
             "INSERT INTO voterinteractions SET ?",
             {
@@ -61,9 +61,10 @@ module.exports = function(app){
                 updatedAt: today
             },
             function(err, result) {
+                console.log("result", result);
                 if (err) throw err;  
-                res.redirect("../status/" + voterId);          
-                // res.json(voterId);
+                // res.redirect("../status/" + voterId);          
+                res.json(voterId);
             }
           );
     });
