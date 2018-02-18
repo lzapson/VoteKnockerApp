@@ -45,8 +45,8 @@
                         </div>
                     </div>
                 </h4>
-            </div>
-        </div>
+            </div> {{!-- card-block --}}
+        </div> {{!-- card --}}
         <div class="card">
             <div class="card-block">
                 <h5>District Information</h5>
@@ -76,8 +76,8 @@
                     </tr>
                     </tbody>
                 </table>
-            </div>
-        </div>
+            </div>  {{!-- card-block --}}
+        </div> {{!-- card --}}
         <div class="card">
             <div class="card-block">
                 <h5>Voting History</h5>
@@ -102,8 +102,8 @@
                     {{/each}}
                     </tbody>
                 </table>
-            </div>
-        </div>
+            </div> {{!-- card-block --}}
+        </div> {{!-- card --}}
         <div class="card">
             <div class="card-block">
                 <h5>Interactions</h5>
@@ -150,13 +150,12 @@
                         {{/each}}
                     </tbody>
                 </table>
-            </div>
-        </div>
-    </div>
+            </div> {{!-- card-block --}}
+        </div> {{!-- card --}}
+    </div>  {{!-- card-border --}}
     <div class="more-bottom-margin text-center">
       <a href="/interactions/{{status.voterId}}">
         <button type="button" class="btn btn-danger" id="button-status">Knock This Voter</button>
       </a>
     </div>
-
-</div>
+</div> {{!-- container-fluid --}}

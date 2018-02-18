@@ -1,11 +1,10 @@
-
-     <div class="container" id="main-content">
-           <div class="card-border" id="status-border">
+<div class="container" id="main-content">
+    <div class="card-border" id="status-border">
         <div class="card">
             <div class="card-block">
                 <h4 class="card-title">
-                   <div id="id">{{voter.id}}</div>  
-      <div id="voterId">{{voter.voterId}}</div>
+                    <div id="id">{{voter.id}}</div>  
+                    <div id="voterId">{{voter.voterId}}</div>
                     <div class="row">
                         <div class="col-5">
                             <div class="flex-table address">
@@ -42,53 +41,45 @@
                             </div>
                         </div>
                     </div>
-                </h4>
-            </div>
-        </div>
-
-
-     
-        
-
+                </h4> {{!-- card-title --}}
+            </div> {{!-- card-block --}}
+        </div> {{!-- card --}}
         <div class="card">
             <div class="card-block">
-<div id="survey">
-      <h5>Did you knock?</h5>
-      <form action="">
-        <input type="radio" name="knock" value="1"> Yes<br>
-        <input type="radio" name="knock" value="0"> No<br>
-      </form>
-      <br>
-      <h5>Did you hand out literature?</h5>
-      <form action="">
-        <input type="radio" name="literature" value="1"> Yes<br>
-        <input type="radio" name="literature" value="0"> No<br>
-      </form>
-      <br>
-      <h5>Did they sign petition?</h5>
-      <form action="">
-        <input type="radio" name="petition" value="1"> Yes<br>
-        <input type="radio" name="petition" value="0"> No<br>
-      </form>
-      <br>
-      <h5> Extra Contact</h5>
-      <div id="extraContact">
-        <label for="inputEmail">Email: </label>
-        <input type="email" class="form-control" id="extraEmail" placeholder="email"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
-        <label for="inputPhone">Phone: </label>
-        <input type="phone" class="form-control" id="extraPhone" placeholder="(***)  *** - ****">
-      </div>
+                <div id="survey">
+                    <h5>Did you knock?</h5>
+                    <form action="">
+                        <input type="radio" name="knock" value="1"> Yes<br>
+                        <input type="radio" name="knock" value="0"> No<br>
+                    </form>
+                    <br>
+                    <h5>Did you hand out literature?</h5>
+                    <form action="">
+                        <input type="radio" name="literature" value="1"> Yes<br>
+                        <input type="radio" name="literature" value="0"> No<br>
+                    </form>
+                    <br>
+                    <h5>Did they sign petition?</h5>
+                    <form action="">
+                        <input type="radio" name="petition" value="1"> Yes<br>
+                        <input type="radio" name="petition" value="0"> No<br>
+                    </form>
+                    <br>
+                    <h5> Extra Contact</h5>
+                    <div id="extraContact">
+                        <label for="inputEmail">Email: </label>
+                        <input type="email" class="form-control" id="extraEmail" placeholder="email"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+                        <label for="inputPhone">Phone: </label>
+                        <input type="phone" class="form-control" id="extraPhone" placeholder="(***)  *** - ****">
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-default btn-primary" id="add-interactions-button">Submit</button>
+                </div>  {{!-- survey --}}
+            </div>  {{!-- card-block --}}
+        </div>  {{!-- card --}}
+    </div>  {{!-- card-border --}}
+</div> {{!-- container --}}
 
-      <br>
-          
-    <button type="submit" class="btn btn-default btn-primary" id="add-interactions-button">Submit</button>
-
-           
-              </div>
- </div>
-
-        </div>
-        </div>
         
       
  
